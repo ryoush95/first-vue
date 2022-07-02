@@ -1,17 +1,35 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div>
+    <h1 :class="text1" :style="text1">vuedongsan</h1>
+  </div>
+
+  <label :style="text1">{{ report }}</label>
+  <button v-on:click="increase">
+    {{ btn }}
+  </button>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
 export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
-}
+  name: "App",
+  data() {
+    return {
+      report: 0,
+      btn: "button",
+      text1: {
+        color: "red",
+        fontfamily:
+          '"Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif',
+        margin: "20px",
+      },
+    };
+  },
+  methods: {
+    increase() {
+      this.report++;
+    },
+  },
+};
 </script>
 
 <style>
